@@ -6,3 +6,4 @@ this is a simple test framework using playwright javascript/typescript
 ## 2. feature
 
 ### 2.1 page object model
+### 2.2 running in chrome browser

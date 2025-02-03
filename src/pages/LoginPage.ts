@@ -27,7 +27,7 @@ export default class LoginPage {
     {
         await this.page.locator(this.passwordTxtBx).fill(password);
     }
-
+    // click on login button to go to homePage
     async clickOnLoginBtn(){
         await this.page.locator(this.loginBtn)
                .click()
