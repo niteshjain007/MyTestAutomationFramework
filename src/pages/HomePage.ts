@@ -1,4 +1,5 @@
 import {Page, expect} from "@playwright/test"
+import logger from "../utils/LoggerUtil";
 
 export default class HomePage{
 
@@ -9,7 +10,11 @@ export default class HomePage{
     }
 
     async verifyLogoIsPresent(){
-        await expect(this.page.locator(this.logoImage)).toBeVisible({timeout:10000});
+        await expect(this.page.locator(this.logoImage)).toBeVisible({timeout:10000})
+        .catch((error)=>{
+            logger.error(`error came while chekcing logo: ${error}`);
+            throw error;
+        }).then(()=>{logger.info("logo  visible")});
     }
 
     async clickOnPopupModalCloseButton()
@@ -22,5 +27,12 @@ export default class HomePage{
         }
     }
 
+    async verifyLogoIsPresentheck(){
+        await expect(this.page.locator(this.logoImage)).toBeVisible({timeout:10000})
+        .catch((error)=>{
+            logger.error(`error came while chekcing logo: ${error}`);
+            throw error;
+        }).then(()=>{logger.info("logo  visible")});
+    }
 
 }

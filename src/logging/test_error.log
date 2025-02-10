@@ -1,0 +1,20 @@
+2025-02-07T08:24:37+05:30 [error]: error came while chekcing logo: Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m
+
+Locator: locator('img[class=\'app-logo2\']')
+Expected: visible
+Received: <element(s) not found>
+Call log:
+[2m  - expect.toBeVisible with timeout 10000ms[22m
+[2m  - waiting for locator('img[class=\'app-logo2\']')[22m
+[2m    - waiting for" https://test.techlift.in/desk" navigation to finish...[22m
+[2m    - navigated to "https://test.techlift.in/desk"[22m
+
+2025-02-07T08:39:30+05:30 [error]: error came while chekcing logo: Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m
+
+Locator: locator('img[class=\'app-logo\']')
+Expected: visible
+Received: <element(s) not found>
+Call log:
+[2m  - expect.toBeVisible with timeout 10000ms[22m
+[2m  - waiting for locator('img[class=\'app-logo\']')[22m
+

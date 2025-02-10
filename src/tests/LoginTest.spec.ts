@@ -1,6 +1,9 @@
 import {test} from "@playwright/test";
 
 import LoginPage from "../pages/LoginPage";
+import { decrypt, encrypt } from "../utils/CryptojsUtil";
+import { encryptEnvFIle } from "../utils/EncryptENVFile";
+import logger from "../utils/LoggerUtil";
 
 test.skip("LoginWithValidCredential",async ({page})=>{
 
@@ -16,7 +19,7 @@ test.skip("LoginWithValidCredential",async ({page})=>{
 });
 
 
-test("LoginWithEnvValidCredential",async ({page})=>{
+test.skip("LoginWithEnvValidCredential",async ({page})=>{
 
     const loginPageObj = new LoginPage(page);
 
@@ -31,4 +34,56 @@ test("LoginWithEnvValidCredential",async ({page})=>{
    // console.log(process.env.NODE_ENV)
   //  console.log(process.env.userEmail);
    // console.log(process.env.password);
+});
+
+
+
+test.skip("LoginWithEncryptedValidCredentialFromEncrptedFile",async ({page})=>{
+
+    const loginPageObj = new LoginPage(page);
+
+    await loginPageObj.gotoLoginPage();
+    await loginPageObj.fillUserName(decrypt(process.env.userEmail!));
+    await loginPageObj.fillPassword(process.env.password!);
+
+   const homePageObj= await loginPageObj.clickOnLoginBtn();
+   await homePageObj.clickOnPopupModalCloseButton();
+    await homePageObj.verifyLogoIsPresent();
+
+  /*  const mytext = "JOHN travolta";
+    const encyptedText = encrypt(mytext);
+
+    console.log('SALT:',process.env.SALT);
+    console.log('encyopted value:',encyptedText)
+
+    const dycryptedText = decrypt(encyptedText);
+    console.log('decrypted value:', dycryptedText);*/
+
+});
+
+
+
+test("LoginWithEncryptedValidCredential",async ({page})=>{
+   
+    const loginPageObj = new LoginPage(page);
+    logger.info("i am at home page");
+    await loginPageObj.gotoLoginPage();
+    await loginPageObj.fillUserName(decrypt(process.env.userEmail!));
+    await loginPageObj.fillPassword(decrypt(process.env.password!));
+    logger.info("userid password provided");
+   const homePageObj= await loginPageObj.clickOnLoginBtn();
+   await homePageObj.clickOnPopupModalCloseButton();
+    await homePageObj.verifyLogoIsPresent();
+
+   /* const mytext = "JOHN travolta";
+    const encyptedText = encrypt(mytext);
+
+    console.log('SALT:',process.env.SALT);
+    console.log('encyopted value:',encyptedText)
+
+    const dycryptedText = decrypt(encyptedText);
+    console.log('decrypted value:', dycryptedText);
+
+    encryptEnvFIle();
+*/
 });

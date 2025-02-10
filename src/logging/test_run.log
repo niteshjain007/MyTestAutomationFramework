@@ -1,0 +1,33 @@
+2025-02-07T08:22:48+05:30 [info]: navigate to login page
+2025-02-07T08:22:48+05:30 [info]: username filled
+2025-02-07T08:22:52+05:30 [info]: logo  visible
+2025-02-07T08:24:27+05:30 [info]: navigate to login page
+2025-02-07T08:24:27+05:30 [info]: username filled
+2025-02-07T08:24:37+05:30 [error]: error came while chekcing logo: Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m
+
+Locator: locator('img[class=\'app-logo2\']')
+Expected: visible
+Received: <element(s) not found>
+Call log:
+[2m  - expect.toBeVisible with timeout 10000ms[22m
+[2m  - waiting for locator('img[class=\'app-logo2\']')[22m
+[2m    - waiting for" https://test.techlift.in/desk" navigation to finish...[22m
+[2m    - navigated to "https://test.techlift.in/desk"[22m
+
+2025-02-07T08:39:19+05:30 [info]: navigate to login page
+2025-02-07T08:39:20+05:30 [info]: username filled
+2025-02-07T08:39:30+05:30 [error]: error came while chekcing logo: Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m
+
+Locator: locator('img[class=\'app-logo\']')
+Expected: visible
+Received: <element(s) not found>
+Call log:
+[2m  - expect.toBeVisible with timeout 10000ms[22m
+[2m  - waiting for locator('img[class=\'app-logo\']')[22m
+
+2025-02-10T08:43:03+05:30 [info]: navigate to login page
+2025-02-10T08:43:03+05:30 [info]: username filled
+2025-02-10T08:43:09+05:30 [info]: logo  visible
+2025-02-10T08:43:45+05:30 [info]: navigate to login page
+2025-02-10T08:43:46+05:30 [info]: username filled
+2025-02-10T08:43:50+05:30 [info]: logo  visible
