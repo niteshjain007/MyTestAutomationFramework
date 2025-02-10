@@ -1,5 +1,6 @@
 import {Page} from "@playwright/test";
 import HomePage from "./HomePage";
+import logger from "../utils/LoggerUtil";
 
 export default class LoginPage {
 
@@ -15,12 +16,14 @@ export default class LoginPage {
     async gotoLoginPage(){
         await this.page.goto("/");
         await this.page.locator(this.loginLink).click();
+        logger.info("navigate to login page");
     }
 
     
     async fillUserName(userName : string)
     {
         await this.page.locator(this.usernameTxtBx).fill(userName);
+        logger.info("username filled");
     }
 
     async fillPassword(password : string)
